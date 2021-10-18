@@ -1,11 +1,13 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useFirebase from '../../hooks/useFirebase';
 import './Header.css'
 const Header = () => {
+    const {user,signOutUser} = useFirebase();
     return (
         <div>
-              <Navbar variant={"light"} expand="lg" className="bg-off-blue  " fixed="top" >
+              <Navbar variant={"light"} expand="lg" className="bg-off-blue   "  >
                     <Container>
                         <Navbar.Brand> <Nav.Link as={NavLink} to="/"><img src="" alt="logo">
                         </img></Nav.Link>
@@ -21,6 +23,11 @@ const Header = () => {
                                 <Nav.Link as={NavLink} to="/blog" className="nav-link" >Blog</Nav.Link>
                                 <Nav.Link as={NavLink} to="/about" className="nav-link" >About</Nav.Link>
                                 <Nav.Link as={NavLink} to="/contact" className="nav-link" >Contact</Nav.Link>
+                                {
+                                 user.email?
+                                 <Button onClick={signOutUser}>Sing Out</Button> :
+                                 <Nav.Link as={NavLink} to="/singIn" className="nav-link" ><Button>Sing In</Button></Nav.Link>
+                                }
                             </Nav>
 
                         </Navbar.Collapse>

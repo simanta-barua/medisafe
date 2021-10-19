@@ -15,9 +15,9 @@
   <a href="#license">License</a>
 </p>
 <h4 align="center">Medisafe Screenshot desktop view</h4>
-![screenshot]("https://i.ibb.co/pQbvBLw/Screenshot-2021-10-19-at-23-30-52-Medisafe.png")
+![screenshot](https://i.ibb.co/pQbvBLw/Screenshot-2021-10-19-at-23-30-52-Medisafe.png)
 
-
+![screenshot](https://i.ibb.co/18x0S4k/Screenshot-2021-10-19-at-23-55-04-Medisafe.png)
 ## How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:

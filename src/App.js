@@ -15,6 +15,7 @@ import AuthProvider from "./contexts/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
+import ProductDetails from "./components/ProductDetails/ProductDetails";
 function App() {
   return (
     <div>
@@ -28,10 +29,13 @@ function App() {
             <Route path='/shop'>
               <Shop></Shop>
             </Route>
-            <Route path='/signIn'>
+            <PrivateRoute path='/productdetails/:productid'>
+              <ProductDetails></ProductDetails>
+            </PrivateRoute>
+            <Route path='/signin'>
               <SignIn></SignIn>
             </Route>
-            <Route path='/signUp'>
+            <Route path='/signup'>
               <Registration></Registration>
             </Route>
             <PrivateRoute path='/placeorder'>
@@ -41,7 +45,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
-          <Footer></Footer>  
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>

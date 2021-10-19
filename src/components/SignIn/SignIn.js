@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import './SignIn.css'
 
@@ -56,7 +56,7 @@ const SignIn = () => {
                 <div>
                     <br />
                     <h5>Not have an account?</h5>
-                    <Button onClick={handleGoogleSignIn} className="m-2"> Login Here</Button>
+                    <Link to='/signup'><Button  className="m-2"> Register Here</Button></Link>
                     <br />
                     <h5>Or</h5>
                     <Button onClick={handleGoogleSignIn} className="m-2"> Google sign In</Button>

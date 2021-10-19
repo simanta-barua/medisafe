@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Button, Container, Form } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Registration = () => {
@@ -26,7 +27,7 @@ const Registration = () => {
   return (
     <div>
       <Container className="custom-form text-center">
-        <h2>Sign In</h2>
+        <h2>Sign Up</h2>
         <div>
           <Form>
             <Form.Group className="mb-3" id="email">
@@ -44,14 +45,14 @@ const Registration = () => {
                 ref={passwordRef} type="password" placeholder="Password" />
             </Form.Group>
             <Button onClick={handleSubmit} variant="primary" type="submit">
-              Submit
+              Sign Up
             </Button>
           </Form>
         </div>
         <div>
           <br />
-          <h5>Not have an account?</h5>
-          <Button onClick={handleGoogleSignIn} className="m-2"> Login Here</Button>
+          <h5>Already have an account?</h5>
+          <Link to='/signin'><Button className="m-2"> Login Here</Button></Link>
           <br />
           <h5>Or</h5>
           <Button onClick={handleGoogleSignIn} className="m-2"> Google sign In</Button>

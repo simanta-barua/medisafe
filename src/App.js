@@ -16,6 +16,9 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
+import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
+import Category from "./components/Category/Category";
 function App() {
   return (
     <div>
@@ -24,6 +27,9 @@ function App() {
           <Header></Header>
           <Switch>
             <Route path='/home'>
+              <Home></Home>
+            </Route>
+            <Route exact path='/'>
               <Home></Home>
             </Route>
             <Route path='/shop'>
@@ -37,6 +43,15 @@ function App() {
             </Route>
             <Route path='/signup'>
               <Registration></Registration>
+            </Route>
+            <Route path='/about'>
+              <About></About>
+            </Route>
+            <Route path='/contact'>
+              <Contact></Contact>
+            </Route>
+            <Route path='/category'>
+              <Category></Category>
             </Route>
             <PrivateRoute path='/placeorder'>
               <PlaceOrder></PlaceOrder>

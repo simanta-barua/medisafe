@@ -1,9 +1,8 @@
-.banner {
-    padding: 1rem;
-    border-radius: 15px;
-    box-shadow: 0 1px 4px 0 rgba(230, 221, 221, 0.2),
-      0 6px 20px 0 rgba(105, 155, 132, 0.19);
-    background-color: azure;
-    margin: 2.5rem;
-    padding: 1.5rem;
-  }
+.nav-bar{
+  height: 5rem;
+  align-items: center;
+ 
+}
+.bg-off-blue{
+background-color: rgb(240, 255, 255);
+}

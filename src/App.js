@@ -14,6 +14,7 @@ import Registration from "./components/Registration/Registration";
 import AuthProvider from "./contexts/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
+import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <div>
@@ -40,6 +41,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>  
         </Router>
       </AuthProvider>
     </div>

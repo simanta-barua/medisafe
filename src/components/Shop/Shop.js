@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import useFetch from '../../hooks/useFetch';
 import Product from '../Product/Product';
 
@@ -9,7 +9,8 @@ const Shop = () => {
     console.log(products);
     
     return (
-        <div className="course-container mt-5 p-3">
+        <Container>
+            <div className="course-container mt-5 p-3">
             <div className="text-center text-box ">
                 <h2> Find the Right </h2>
                 <h1>Online Course for you</h1>
@@ -23,6 +24,7 @@ const Shop = () => {
                 }
             </Row>
         </div>
+        </Container>
     );
 };
 

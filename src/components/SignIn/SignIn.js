@@ -1,17 +1,31 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import useFirebase from "../../hooks/useFirebase";
+import { useHistory, useLocation } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+
 
 const SignIn = () => {
-    const { user, signInUsingGoogle } = useFirebase();
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-    console.log(watch("example")); // watch input value by passing the name of it
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { signInUsingGoogle } = useAuth();
+   
+    const handleGoogleSignIn = () => {
+        signInUsingGoogle()
+            .then((result) => {
+               
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.email;
+            });
+    }
+   
     return (
         <div>
             <div>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit()}>
                     <br />
                     {/* register your input into the hook by invoking the "register" function */}
                     <input defaultValue="name" {...register("example")} />
@@ -25,7 +39,7 @@ const SignIn = () => {
                 </form>
             </div>
             <div>
-                <Button onClick={signInUsingGoogle}> Google sign In</Button>
+                <Button onClick={handleGoogleSignIn}> Google sign In</Button>
             </div>
         </div>
     );

@@ -25,8 +25,8 @@ const Header = () => {
                                 <Nav.Link as={NavLink} to="/contact" className="nav-link" >Contact</Nav.Link>
                                 {
                                  user.email?
-                                 <Button onClick={signOutUser}>Sing Out</Button> :
-                                 <Nav.Link as={NavLink} to="/singIn" className="nav-link" ><Button>Sing In</Button></Nav.Link>
+                                 <Button onClick={signOutUser}>Sign Out</Button> :
+                                 <Nav.Link as={NavLink} to="/signIn" className="nav-link" ><Button>sign In</Button></Nav.Link>
                                 }
                             </Nav>
 

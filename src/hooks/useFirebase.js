@@ -12,17 +12,8 @@ const useFirebase = () => {
 
     //google sign 
     const signInUsingGoogle = () => {
-        signInWithPopup(auth, googleAuthProvider)
-            .then((result) => {
-                // The signed-in user info.
-                const user = result.user;
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.email;
-            });
+       return signInWithPopup(auth, googleAuthProvider);
+           
     }
     // sign out 
     const signOutUser = () => {

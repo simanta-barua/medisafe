@@ -1,0 +1,19 @@
+.custom-form{
+    margin: 1.5rem auto;
+    padding: 1.2rem;
+    background-color: rgb(233, 245, 245);
+    width: 30rem;
+    border-radius: 3%;
+}
+input{
+    display: block;
+    width: 25.5rem;
+    padding: .5rem;
+    margin: auto;
+    border-radius: 1rem;
+}
+span{
+    text-align: center;
+    display: block;
+    margin-top: .5rem;
+}

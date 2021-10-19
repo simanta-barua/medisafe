@@ -3,14 +3,15 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
 import './Header.css'
+import logo from '../../assets/logo.png'
 const Header = () => {
     const { user, signOutUser } = useFirebase();
     return (
         <div>
             <Navbar variant={"light"} expand="lg" className="bg-off-blue   "  >
                 <Container>
-                    <Navbar.Brand> <Nav.Link as={NavLink} to="/"><img src="" alt="logo">
-                    </img></Nav.Link>
+                    <Navbar.Brand> <Nav.Link as={NavLink} to="/"><img src={logo} alt="logo">
+                    </img ></Nav.Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll" >

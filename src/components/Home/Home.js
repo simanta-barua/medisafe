@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import useFetch from '../../hooks/useFetch';
 import Banner from '../Banner/Banner';
+import Brand from '../Brand/Brand';
+import Category from '../Category/Category';
 import Product from '../Product/Product';
 import './Home.css'
 
@@ -22,6 +24,8 @@ const Home = () => {
                         }
                     </Row>
                 </div>
+                <Category></Category>
+                <Brand></Brand>
             </Container>
         </div>
     );

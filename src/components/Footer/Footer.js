@@ -1,40 +1,41 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import './Footer.css'
+
+import logo from '../../assets/logo.png'
 const Footer = () => {
     return (
         <div>
-           <Container className="bg-off-blue footer text-dark text-center mt-5" fluid  >
+            <Container className="bg-off-blue footer text-dark text-center mt-5" fluid  >
                 <Row className='p-5' >
                     <Col sm={4}>
-                        <h3 className="ms-4" >Explore</h3>
                         <ul>
-                            <li variant="dark">About Us</li>
-                            <li variant="dark">Success Story</li>
-                            <li variant="dark">Careers</li>
-                            <li variant="dark">Resource Center</li>
-                            <li variant="dark">Courses</li>
-                            <li variant="dark">Contact Us</li>
+                            <img src={logo} alt="" />
+                            <li variant="dark">Call us 800 388 80 90
+                            </li>
+                            <li variant="dark">58 Howard Street #2 San Francisco</li>
+                            <li variant="dark">
+                                contact@medizin.com</li>
+
                         </ul>
 
                     </Col>
-                    <Col sm={4}><h3 className="ms-4">Categories</h3>
+                    <Col sm={4}><h3 className="ms-4">Customer Service</h3>
                         <ul>
-                            <li variant="dark">All Courses</li>
-                            <li variant="dark">Storytelling & Voice Over</li>
-                            <li variant="dark">Digital Marketing</li>
-                            <li variant="dark">Design & Branding</li>
-                            <li variant="dark">Nanodegree Plus</li>
-                            <li variant="dark">Veterans</li>
+                            <li variant="dark">Shipping Options</li>
+                            <li variant="dark"> My Wishlist</li>
+                            <li variant="dark">My Account</li>
+                            <li variant="dark">Return Policy </li>
+                            <li variant="dark">Shopping FAQs</li>
+
                         </ul></Col>
-                    <Col sm={4}><h3 className="ms-4">Support</h3>
+                    <Col sm={4}><h3 className="ms-4">Our Company</h3>
                         <ul>
-                            <li variant="dark">Help Center</li>
-                            <li variant="dark">System Requirements</li>
-                            <li variant="dark">Register Activation Key</li>
-                            <li variant="dark">Site Feedback</li>
-                            <li variant="dark">Documentation</li>
-                            <li variant="dark">Forums</li>
+                            <li variant="dark">About us</li>
+                            <li variant="dark">Location</li>
+                            <li variant="dark">Register </li>
+                            <li variant="dark">Feedback</li>
+                            <li variant="dark">Shop Location</li>
                         </ul></Col>
 
                 </Row>

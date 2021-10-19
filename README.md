@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://keen-poitras-80abc9.netlify.app/"><img src="https://keen-poitras-80abc9.netlify.app/static/media/logo.f6d613cb.png" alt="img" width="200"></a>
+  <a href="https://medisafe-1ac3b.web.app"><img src="https://i.ibb.co/JvM3bMv/logo.png" alt="img" width="200"></a>
   <br>
   Medisafe
   <br>
@@ -15,7 +15,7 @@
   <a href="#license">License</a>
 </p>
 <h4 align="center">Medisafe Screenshot desktop view</h4>
-![screenshot](https://i.ibb.co/pQbvBLw/Screenshot-2021-10-19-at-23-30-52-Medisafe.png)
+![screenshot]("https://i.ibb.co/pQbvBLw/Screenshot-2021-10-19-at-23-30-52-Medisafe.png")
 
 ## How To Use
 

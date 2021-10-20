@@ -3,7 +3,7 @@ import { Badge, Button, Card, Col, ListGroup } from 'react-bootstrap';
 import './Product.css'
 import { Link } from 'react-router-dom';
 const Product = (props) => {
-    const { index, title, image, category, price } = props.product;
+    const { index, title, image, category, price, details } = props.product;
     return (
         <div>
             <Col>
@@ -16,6 +16,7 @@ const Product = (props) => {
                         <ListGroup variant="flush" >
                             <ListGroup.Item> Category: <Badge pill bg="primary">{category}</Badge></ListGroup.Item>
                             <ListGroup.Item>Price: ${price} </ListGroup.Item>
+                            <ListGroup.Item>{details} </ListGroup.Item>
                         </ListGroup>
                     </Card.Body>
                     <Card.Footer className="text-center card-footer">

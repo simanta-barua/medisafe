@@ -16,11 +16,7 @@ const ProductDetails = () => {
             .then(data => setProducts(data)
             )
     }, [])
-
-
     const { title, image, price, details, category } = products;
-    console.log(products);
-    
     return (
         <div>
             <Container>
@@ -33,7 +29,6 @@ const ProductDetails = () => {
                         <ListGroup variant="flush" >
                             <ListGroup.Item> Category: <Badge pill bg="primary">{category}</Badge></ListGroup.Item>
                             <ListGroup.Item>Price: ${price} </ListGroup.Item>
-
                             <ListGroup.Item>Details: {details} </ListGroup.Item>
                             <Link to="/shop" className="text-light p-3 m-3"> <Button variant="danger">View all Product </Button></Link>
                         </ListGroup>
@@ -48,11 +43,3 @@ const ProductDetails = () => {
 export default ProductDetails;
 
 
-
-
-// const [products] = useFetch()
-// setTimeout(() => {
-//     var newProduct = products[productid];
-//     console.log("Data:",newProduct);
-// }, 200);
-// console.log(products);

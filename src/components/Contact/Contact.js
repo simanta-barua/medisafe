@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Col, Container, Form, ListGroup, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 const Contact = () => {
     return (
         <div>
@@ -81,9 +82,9 @@ const Contact = () => {
                                 <Form.Check type="checkbox" label="Check me out" />
                             </Form.Group>
 
-                            <Button variant="primary">
+                           <Link to='signIn' ><Button variant="primary">
                                 Submit
-                            </Button>
+                            </Button></Link>
                         </Form>
                     </Col>
                 </Row>

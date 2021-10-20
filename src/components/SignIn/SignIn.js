@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import swal from "sweetalert";
@@ -11,22 +11,25 @@ const SignIn = () => {
     const location = useLocation();
     const history = useHistory();
     const redirect_url = location.state?.from || '/home';
-console.log(location.state?.from);
-
     const { signInUsingGoogle, handleUserSignIn } = useAuth();
-
     //handle google sing in
     const handleGoogleSignIn = () => {
         signInUsingGoogle()
             .then((result) => {
                 history.push(redirect_url);
-                swal("Good job", "success");
-            }).catch(err => swal("Something went wrong!", `${err.message}`, "error"));
+                swal("Google Sign In Success", {
+                    icon: "success",
+                });
+            })
+            .catch(err =>
+                swal("Something went wrong!", `${err.message}`, "error")
+
+            );
     }
     //handle email sign in
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleUserSignIn(emailRef.current.value, passwordRef.current.value,)
+        handleUserSignIn(emailRef.current.value, passwordRef.current.value)
     }
 
     return (
@@ -39,7 +42,7 @@ console.log(location.state?.from);
                             <Form.Label>Email address</Form.Label>
                             <Form.Control
                                 componentClass="textarea"
-                                ref={emailRef} type="email" placeholder="Enter email" required/>
+                                ref={emailRef} type="email" placeholder="Enter email" required />
                             <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
                             </Form.Text>
@@ -47,7 +50,7 @@ console.log(location.state?.from);
                         <Form.Group className="mb-3" id="password">
                             <Form.Label>Password</Form.Label>
                             <Form.Control
-                                ref={passwordRef} type="password" placeholder="Password" />
+                                ref={passwordRef} type="password" placeholder="Password" required />
                         </Form.Group>
                         <Button onClick={handleSubmit} variant="primary" type="submit">
                             Submit

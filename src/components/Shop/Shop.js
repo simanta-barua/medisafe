@@ -5,9 +5,7 @@ import Product from '../Product/Product';
 
 const Shop = () => {
     const [products] = useFetch();
-    console.log(products);
-
-    return (
+      return (
         <Container>
             <div className="course-container mt-5 p-3">
                 <div className="text-center text-box ">

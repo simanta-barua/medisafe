@@ -2,23 +2,19 @@ import { useEffect, useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import initializeAuthentication from '../config/firebaseConfig';
 import swal from 'sweetalert';
-import { useHistory } from 'react-router-dom';
 
 //initialize firebase  authentication
 initializeAuthentication()
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const auth = getAuth();
-  const history = useHistory();
   const googleAuthProvider = new GoogleAuthProvider();
-
   const handleUserRegister = (email, password, displayName) => {
     createUserWithEmailAndPassword(auth, email, password, displayName)
       .then((result) => {
-        console.log(result);
-        swal("Login In Success", "success");
-        history.push('/');
-
+        swal("Login In Success", {
+          icon: "success",
+        });
       })
       .catch(err => swal("Something went wrong!", `${err.message}`, "error"));
   };
@@ -26,15 +22,14 @@ const useFirebase = () => {
   const handleUserSignIn = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        swal("good job", "success");
-        
+        swal("Sign In Success", { icon: "success", });
       })
       .catch(err => swal("Something went wrong!", `${err.message}`, "error"));
   };
 
   //google sign in
   const signInUsingGoogle = () => {
-    return signInWithPopup(auth, googleAuthProvider);
+    return signInWithPopup(auth, googleAuthProvider)
 
   }
   // sign out 
@@ -42,8 +37,8 @@ const useFirebase = () => {
     signOut(auth).then(() => {
       setUser({});
     }).catch((err) => {
-
-    });
+      swal("Something went wrong!", `${err.message}`, "error")
+    })
   }
   //on State Change 
   useEffect(() => {

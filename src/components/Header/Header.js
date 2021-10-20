@@ -6,7 +6,6 @@ import './Header.css'
 import logo from '../../assets/logo.png'
 const Header = () => {
     const { user, signOutUser } = useFirebase();
-    console.log(user);
     
     return (
         <div>

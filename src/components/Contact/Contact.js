@@ -6,8 +6,8 @@ const Contact = () => {
         <div>
             <Container>
                 <Row className="mt-5 p-5" >
-                <h1>Get in touch</h1>
-                <p>Looking for help? Fill the form and start a new adventure. </p>
+                    <h1>Get in touch</h1>
+                    <p>Looking for help? Fill the form and start a new adventure. </p>
                     <Col className="mt-5">
                         <ListGroup>
                             <ListGroup.Item>
@@ -82,7 +82,7 @@ const Contact = () => {
                                 <Form.Check type="checkbox" label="Check me out" />
                             </Form.Group>
 
-                           <Link to='signIn' ><Button variant="primary">
+                            <Link to='signIn' ><Button variant="primary">
                                 Submit
                             </Button></Link>
                         </Form>

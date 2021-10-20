@@ -18,8 +18,8 @@ const Banner = () => {
                                     alt="First slide"
                                 />
                                 <Carousel.Caption>
-                                <h1 >COVID-19 Prevention <br/> Care Supplies </h1>
-                                        <p >Backed by experience since 1950. One-stop Source for all your Hospital & Medical Needs. </p>
+                                    <h1 >COVID-19 Prevention <br /> Care Supplies </h1>
+                                    <p >Backed by experience since 1950. One-stop Source for all your Hospital & Medical Needs. </p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item interval={1500}>
@@ -29,9 +29,9 @@ const Banner = () => {
                                     alt="Second slide"
                                 />
                                 <Carousel.Caption>
-                                <span>Home Medical Supplies</span>
-                                            <h2>Sanitizer Gel Alcohol</h2>
-                                            <h3>$15.00</h3>
+                                    <span>Home Medical Supplies</span>
+                                    <h2>Sanitizer Gel Alcohol</h2>
+                                    <h3>$15.00</h3>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -41,8 +41,8 @@ const Banner = () => {
                                     alt="Third slide"
                                 />
                                 <Carousel.Caption>
-                                <h1 >Fitted Face Mask N95<br/> Group Pack of 3 </h1>
-                                        <p >3M high-efficiency electrostatic filter cotton, non-oily particle filtration efficiency ≥ 90% </p>
+                                    <h1 >Fitted Face Mask N95<br /> Group Pack of 3 </h1>
+                                    <p >3M high-efficiency electrostatic filter cotton, non-oily particle filtration efficiency ≥ 90% </p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         </Carousel>

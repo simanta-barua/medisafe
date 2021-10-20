@@ -16,9 +16,7 @@ const Footer = () => {
                             <li variant="dark">58 Howard Street #2 San Francisco</li>
                             <li variant="dark">
                                 contact@medizin.com</li>
-
                         </ul>
-
                     </Col>
                     <Col sm={4}><h3 className="ms-4">Customer Service</h3>
                         <ul>
@@ -37,7 +35,6 @@ const Footer = () => {
                             <li variant="dark">Feedback</li>
                             <li variant="dark">Shop Location</li>
                         </ul></Col>
-
                 </Row>
                 <div class="row  p-5">
                     <div class="copyright text-muted pb-5">

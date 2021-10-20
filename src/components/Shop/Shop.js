@@ -5,7 +5,7 @@ import Product from '../Product/Product';
 
 const Shop = () => {
     const [products] = useFetch();
-      return (
+    return (
         <Container>
             <div className="course-container mt-5 p-3">
                 <div className="text-center text-box ">
@@ -13,11 +13,9 @@ const Shop = () => {
                     <h1>Our latest medical items for you</h1>
                 </div>
                 <Row xs={1} md={2} sm={1} lg={4} className="g-1 mt-2">
-                  
                     {
                         products.map(product => <Product
                             product={product}
-
                         ></Product>)
                     }
                 </Row>

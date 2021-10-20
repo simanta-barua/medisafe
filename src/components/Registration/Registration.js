@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 import useAuth from '../../hooks/useAuth';
 
 const Registration = () => {
@@ -16,12 +17,8 @@ const Registration = () => {
   const handleGoogleSignIn = () => {
     signInUsingGoogle()
       .then((result) => {
-      }).catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-
+      }).catch((err) => {
+        swal("Something went wrong!", `${err.message}`, "error")
       });
   }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import useFetch from '../../hooks/useFetch';
 import { Badge, Button, Col, Container, ListGroup, Row } from 'react-bootstrap';
@@ -6,13 +6,25 @@ import { Link } from 'react-router-dom';
 
 const ProductDetails = () => {
     const { productid } = useParams();
-    const [products] = useFetch();
-    const newProduct = products[productid];
-    const { title, image, price, details, category } = newProduct;
+
+    const url = `https://api.npoint.io/f20a7309a7a019a15269/${productid}`
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setProducts(data)
+            )
+    }, [])
+
+
+    const { title, image, price, details, category } = products;
+    console.log(products);
+    
     return (
         <div>
             <Container>
-                <h2>{title}</h2>
+                <h2 className="text-center p-3">{title}</h2>
                 <Row className="text-box ">
                     <Col className="text-center">
                         <img src={image} alt="img" />
@@ -34,3 +46,13 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+
+
+
+
+// const [products] = useFetch()
+// setTimeout(() => {
+//     var newProduct = products[productid];
+//     console.log("Data:",newProduct);
+// }, 200);
+// console.log(products);

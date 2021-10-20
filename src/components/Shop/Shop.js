@@ -14,7 +14,8 @@ const Shop = () => {
                     <h2> Shop whatever you want the Right </h2>
                     <h1>Our latest medical items for you</h1>
                 </div>
-                <Row xs={1} md={2} sm={2} lg={4} className="g-1 mt-5">
+                <Row xs={1} md={2} sm={1} lg={4} className="g-1 mt-2">
+                  
                     {
                         products.map(product => <Product
                             product={product}

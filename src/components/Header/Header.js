@@ -6,6 +6,8 @@ import './Header.css'
 import logo from '../../assets/logo.png'
 const Header = () => {
     const { user, signOutUser } = useFirebase();
+    console.log(user);
+    
     return (
         <div>
             <Navbar variant={"light"} expand="lg" className="bg-off-blue   "  >
@@ -28,7 +30,7 @@ const Header = () => {
                                 
                                     <div className='d-flex'>
                                         <Button  className="mx-5" onClick={signOutUser}>Sign Out</Button>
-                                        <p className="px-5"> {user.email}</p></div> :
+                                        <p className="px-5"> {user.displayName}</p></div> :
                                     <Nav.Link as={NavLink} to="/signIn" className="nav-link" ><Button>sign In</Button></Nav.Link>
                             }
                         </Nav>

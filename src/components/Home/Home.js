@@ -16,7 +16,7 @@ const Home = () => {
                 <Banner></Banner>
                 <div className="text-center text-box ">
                     <h2> Our Latest Product </h2>
-                    <Row xs={1} md={3} sm={2} className="g-3 m-3 px-5">
+                    <Row xs={1} md={3} sm={2} >
                         {
                             slicedProduct.map(product => <Product
                                 key={product.key}

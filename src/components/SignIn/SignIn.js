@@ -1,31 +1,32 @@
 import React, { useRef } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { useForm } from "react-hook-form";
 import { Link, useHistory, useLocation } from "react-router-dom";
+import swal from "sweetalert";
 import useAuth from "../../hooks/useAuth";
 import './SignIn.css'
 
 const SignIn = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_url = location.state?.from || '/home';
+console.log(location.state?.from);
+
     const { signInUsingGoogle, handleUserSignIn } = useAuth();
 
     //handle google sing in
     const handleGoogleSignIn = () => {
         signInUsingGoogle()
             .then((result) => {
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.email;
-            });
+                history.push(redirect_url);
+                swal("Good job", "success");
+            }).catch(err => swal("Something went wrong!", `${err.message}`, "error"));
     }
     //handle email sign in
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleUserSignIn(emailRef.current.value, passwordRef.current.value)
+        handleUserSignIn(emailRef.current.value, passwordRef.current.value,)
     }
 
     return (
@@ -38,7 +39,7 @@ const SignIn = () => {
                             <Form.Label>Email address</Form.Label>
                             <Form.Control
                                 componentClass="textarea"
-                                ref={emailRef} type="email" placeholder="Enter email" />
+                                ref={emailRef} type="email" placeholder="Enter email" required/>
                             <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
                             </Form.Text>
@@ -56,7 +57,7 @@ const SignIn = () => {
                 <div>
                     <br />
                     <h5>Not have an account?</h5>
-                    <Link to='/signup'><Button  className="m-2"> Register Here</Button></Link>
+                    <Link to='/signup'><Button className="m-2"> Register Here</Button></Link>
                     <br />
                     <h5>Or</h5>
                     <Button onClick={handleGoogleSignIn} className="m-2"> Google sign In</Button>

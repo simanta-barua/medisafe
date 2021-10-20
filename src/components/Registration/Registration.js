@@ -6,10 +6,11 @@ import useAuth from '../../hooks/useAuth';
 const Registration = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
+  const nameRef = useRef();
   const { signInUsingGoogle, handleUserRegister } = useAuth();
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleUserRegister(emailRef.current.value, passwordRef.current.value)
+    handleUserRegister(emailRef.current.value, passwordRef.current.value, nameRef.current.value)
   }
 
   const handleGoogleSignIn = () => {
@@ -31,6 +32,10 @@ const Registration = () => {
         <div>
           <Form>
             <Form.Group className="mb-3" id="email">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                componentClass="textarea"
+                ref={nameRef} type="text" placeholder="Enter Name" />
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 componentClass="textarea"

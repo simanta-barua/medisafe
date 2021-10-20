@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const useFetch = () => {
     const url = 'https://api.npoint.io/f20a7309a7a019a15269'
-    const [products, setProducts] = useState([0])
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
         fetch(url)
